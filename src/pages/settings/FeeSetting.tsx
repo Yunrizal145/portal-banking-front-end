@@ -1,5 +1,3 @@
-import React from "react";
-// import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import SideProfile from "../../components/SideProfile";
 import TableFeeSetting from "../../components/TableFeeSetting";
