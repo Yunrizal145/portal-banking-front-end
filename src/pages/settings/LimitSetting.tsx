@@ -1,16 +1,8 @@
-import React from "react";
-// import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import SideProfile from "../../components/SideProfile";
 import TableLimitSetting from "../../components/TableLimitSetting";
 
 const LimitSetting = () => {
-    // const navigate = useNavigate();
-
-    // const homeNavigate = () => {
-    //     navigate("/");
-    // };
-
     return (
         <div className="flex flex-row">
             <Sidebar />
