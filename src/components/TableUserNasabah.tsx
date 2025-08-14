@@ -12,6 +12,7 @@ interface UserProfile {
 }
 
 const TableUserNasabah: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [transferType, setTransferType] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [allData, setAllData] = useState<UserProfile[]>([]);

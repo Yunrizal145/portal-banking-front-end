@@ -1,4 +1,3 @@
-import React from "react";
 import Sidebar from "../../components/Sidebar";
 import SideProfile from "../../components/SideProfile";
 import TableUserNasabah from "../../components/TableUserNasabah";

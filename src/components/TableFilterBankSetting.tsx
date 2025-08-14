@@ -14,8 +14,8 @@ const TableWithFilters: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const [status, setStatus] = useState("");
-    const [transferType, setTransferType] = useState("");
+    // const [status, setStatus] = useState("");
+    // const [transferType, setTransferType] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
@@ -43,8 +43,12 @@ const TableWithFilters: React.FC = () => {
 
                 const result = await res.json();
                 setData(result.bankTransactionDtos || []);
-            } catch (err: any) {
-                setError(err.message || "Gagal mengambil data");
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    setError(err.message || "Gagal mengambil data");
+                } else {
+                    setError("Gagal mengambil data");
+                }
             } finally {
                 setLoading(false);
             }
@@ -57,9 +61,9 @@ const TableWithFilters: React.FC = () => {
     const filteredData = data.filter((item) => {
         const statusMatch =
             !status || item.bankStatus.toLowerCase() === status.toLowerCase();
-        const transferMatch =
-            !transferType || item.bankCode.startsWith(transferType);
-        return statusMatch && transferMatch;
+        // const transferMatch =
+        //     !transferType || item.bankCode.startsWith(transferType);
+        return statusMatch;
     });
 
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
